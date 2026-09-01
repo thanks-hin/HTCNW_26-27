@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+
+    <form>
+        <fieldset>
+            <legend>Your massage:</legend>
+            <table border="0">
+                <tr>
+                    <td><label for="dest">To</label></td>
+                    <td><input type="text" name="dest"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="email">Your email</label></td>
+                    <td><input type="email" name="email"></td>
+                </tr>
+                
+                <tr>
+                    <td><label for="msg">Message</label></td>
+                    <td><textarea name="msg" rows="8"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="file">Attach File</label></td>
+                    <td><input type="file" name="file"></td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>How you found us:</legend>
+            <table border="0">
+                <tr>
+                    <td><label for="hear_of">How did you hear of us</label></td>
+                    <td>
+                        <select name="hear_of" size="1">
+                            <option value="gg" selected>Google</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="newsletter">Newsletter</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="newsletter" checked>
+                        Ensure this box is checked if you would like to receive email updates
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <input type="submit" value="Send message">
+    </form>
+</body>
+</html>
