@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoko's Kitchen</title>
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        margin: 0;
+        background: #f7f7f7;
+        font-family: Georgia, "Times New Roman", serif;
+        color: #555;
+    }
+
+    .page {
+        width: 960px;
+        max-width: calc(100% - 24px);
+        margin: 12px auto;
+        padding: 10px;
+        background: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 3px rgba(0,0,0,.12);
+    }
+
+    /* Header */
+    header {
+        height: 125px;
+        position: relative;
+        overflow: hidden;
+        background: #aaa url("background.png") center/cover no-repeat;
+    }
+
+    header::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(90,90,90,.38);
+    }
+
+    .logo {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 22px;
+        gap: 16px;
+    }
+
+    .logo img {
+        width: 62px;
+        height: 78px;
+        object-fit: contain;
+        display: block;
+    }
+
+    .logo-text {
+        color: #fff;
+        line-height: 1;
+    }
+
+    .logo-text .name {
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .logo-text .subtitle {
+        display: block;
+        margin-top: 7px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+    }
+
+    /* Navigation */
+    nav {
+        height: 35px;
+        background: #aaa;
+        padding-left: 12px;
+        display: flex;
+        align-items: center;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+        padding: 9px 20px;
+        display: block;
+    }
+
+    nav a:hover {
+        background: #999;
+    }
+
+    /* Main layout */
+    .content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 245px;
+        gap: 0;
+        padding-top: 12px;
+    }
+
+    .main {
+        padding: 8px 22px 10px 10px;
+        border-right: 1px solid #ddd;
+    }
+
+    .course {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 20px;
+        margin-bottom: 42px;
+        align-items: start;
+    }
+
+    .course-image {
+        margin: 0;
+    }
+
+    .course-image img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .course-image figcaption {
+        margin-top: 6px;
+        font-size: 13px;
+        color: #777;
+    }
+
+    .course h2 {
+        margin: 4px 0 2px;
+        color: #555;
+        font-size: 22px;
+        font-weight: normal;
+    }
+
+    .course h3 {
+        margin: 0 0 13px;
+        color: #d68181;
+        font-size: 17px;
+        font-weight: normal;
+    }
+
+    .course p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.45;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        padding: 8px 10px 10px 20px;
+    }
+
+    .sidebar section {
+        margin-bottom: 28px;
+    }
+
+    .sidebar h2 {
+        color: #d68181;
+        font-size: 22px;
+        font-weight: normal;
+        margin: 4px 0 10px;
+    }
+
+    .recipes {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .recipes li {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 8px;
+        color: #d68181;
+        font-size: 14px;
+        line-height: 1.35;
+    }
+
+    .recipes li:first-child {
+        border-top: 1px solid #ddd;
+    }
+
+    .contact p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    /* Footer */
+    footer {
+        height: 28px;
+        margin-top: 0;
+        background: #aaa;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+        font-size: 12px;
+    }
+
+    @media (max-width: 800px) {
+        .page {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            border: 0;
+        }
+
+        .content {
+            grid-template-columns: 1fr;
+        }
+
+        .main {
+            border-right: 0;
+        }
+
+        .sidebar {
+            border-top: 1px solid #ddd;
+            padding: 20px 10px;
+        }
+    }
+
+    @media (max-width: 620px) {
+        .course {
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .course-image img {
+            height: auto;
+        }
+
+        nav {
+            height: auto;
+            flex-wrap: wrap;
+        }
+    }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Yoko's Kitchen logo">
+            <div class="logo-text">
+                <span class="name">YOKO'S KITCHEN</span>
+                <span class="subtitle">JAPANESE COOKING CLASSES</span>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#">home</a>
+        <a href="#">classes</a>
+        <a href="#">catering</a>
+        <a href="#">about</a>
+        <a href="#">contact</a>
+    </nav>
+
+    <div class="content">
+        <main class="main">
+
+            <article class="course">
+                <figure class="course-image">
+                    <img src="teriyaki.jpg" alt="Bok Choi">
+                    <figcaption>Bok Choi</figcaption>
+                </figure>
+
+                <div>
+                    <h2>Japanese Vegetarian</h2>
+                    <h3>Five week course in London</h3>
+                    <p>
+                        A five week introduction to traditional Japanese vegetarian meals,
+                        teaching you a selection of rice and noodle dishes.
+                    </p>
+                </div>
+            </article>
+
+            <article class="course">
+                <figure class="course-image">
+                    <img src="teriyaki.jpg" alt="Teriyaki Sauce">
+                    <figcaption>Teriyaki Sauce</figcaption>
+                </figure>
+
+                <div>
+                    <h2>Sauces Masterclass</h2>
+                    <h3>One day workshop</h3>
+                    <p>
+                        An intensive one-day course looking at how to create the most
+                        delicious sauces for use in a range of Japanese cookery.
+                    </p>
+                </div>
+            </article>
+
+        </main>
+
+        <aside class="sidebar">
+            <section>
+                <h2>Popular Recipes</h2>
+                <ul class="recipes">
+                    <li>Yakitori (grilled chicken)</li>
+                    <li>Tsukune (minced chicken patties)</li>
+                    <li>Okonomiyaki (savory pancakes)</li>
+                    <li>Mizutaki (chicken stew)</li>
+                </ul>
+            </section>
+
+            <section class="contact">
+                <h2>Contact</h2>
+                <p>
+                    Yoko's Kitchen<br>
+                    27 Redchurch Street<br>
+                    Shoreditch<br>
+                    London E2 7DP
+                </p>
+            </section>
+        </aside>
+    </div>
+
+    <footer>
+        &copy; 2026 Yoko's Kitchen
+    </footer>
+
+</div>
+</body>
+</html>
