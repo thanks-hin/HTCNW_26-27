@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+        #container{
+            width: 960px;
+            height: 900px;
+            border: 2px solid black;
+        }
+        #header1{
+            position: relative;
+            width: 100%;
+            height: 150px;
+            background-color: red;
+        }
+        #header1 img{
+            position: absolute;
+            top: 10px;
+            width: 80px;
+            left: 10px;
+        }
+        #header1 h1{
+            position: absolute;
+            top: 80px;
+            left: 120px;
+        }
+        #header1 url{
+            position: absolute;
+            bottom: 0px;
+            right: 5px;
+        }
+        #header1 ul{
+            position: absolute;
+            bottom: 0px;
+            right: 5px;
+        }
+        #header1 ul li{
+            display: inline-block;
+            background-color: rgb(255, 0, 204);
+            padding: 10px;
+        }
+        #header1 ul li a{
+            text-decoration: none;
+            color: white;
+        }
+        #header1 #ser{
+            width: 200px;
+            position: absolute;
+            top: 10px;
+            right: 100px;
+            height: 30px;
+        }
+        #header1 #go{
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            height: 30px;
+        }
+        #content{
+            width: 70%;
+            height: 650px;
+            background-color: rgb(0, 255, 229);
+            padding: 10px;
+            float: left;
+        }
+        #content #left{
+            width: 60%;
+            height: 80%;
+            background-color: rgb(0, 255, 0);
+            /* float: left; */
+        }
+        #content #right{
+            width: 40%;
+            height: 80%;
+            background-color: rgb(0, 0, 255);
+            /* float: left; */
+        }
+        #content h2{
+            color: gray;
+            border-bottom: 2px dashed gray;
+            padding: 10px;
+        }
+        #aside1{
+            width: 30%;
+            height: 650px;
+            background-image: linear-gradient(to right, rgb(217, 255, 0), rgb(0, 255, 0));
+            float: left;
+        }
+        #aside1 h2{
+            color: gray;
+            border-bottom: 2px dashed gray;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        #footer{
+            width: 100%;
+            height: 98px;
+            background-color: rgb(0, 255, 0);
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header1">
+            <img src="img\flower.png" alt="flower">
+            <h1>FlowerBox 360</h1><br>
+            <h2>...to get your daily close of luxury roses!</h2>
+        </div>
+        <div id="content">
+            <div id="left"></div>
+            <div id="right"></div>
+        </div>
+        <div id="aside1"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
