@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .flex-row-basic {
+        display: flex;
+        /* Kích hoạt flexbox */
+        flex-direction: column;
+        /* Sắp xếp hàng dọc */
+        gap: 15px;
+        /* Khoảng cách giữa các item */
+        flex-wrap: wrap;
+        /* Tự động xuống dòng */
+    }
+    
+    .flex-row-basic .item {
+        flex: 0 0 auto;
+        /* Không co giãn */
+        background: #667eea;
+        color: white;
+        padding: 20px 30px;
+        border: none;
+    }
+    
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    body {
+        background: linear-gradient(#6dc5ed, #5fa2f1);
+    }
+    
+    #header {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: large;
+        /* vertical-align: middle; */
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0px 10px 10px;
+    }
+    
+    #header a {
+        margin: 0 15px;
+        text-decoration: solid;
+        color: white;
+        font-weight: bolder;
+    }
+    
+    #header img {
+        width: auto;
+        height: 50px;
+    }
+    
+    body hr {
+        border: none;
+        border-top: 10px dotted white;
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    #content {
+        display: flex;
+        margin-top: 20px;
+    }
+    
+    #content h1 {
+        color: white;
+    }
+    
+    #left {
+        flex: 1;
+        padding: 20px;
+    }
+    
+    #right {
+        flex: 1;
+        padding: 20px;
+    }
+    
+    #footer {
+        background-color: transparent;
+        padding: 10px;
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <div id="header">
+        <div id="nav">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <img src="" alt="Logo" style="">
+    </div>
+    <hr />
+    <div id="content">
+        <div id="left">
+            <h1>Registration Information</h1>
+        </div>
+        <div id="right"></div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>
