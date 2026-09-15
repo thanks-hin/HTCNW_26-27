@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Autumn Travel Company</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #555;
+  }
+
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ---------- Header ---------- */
+  header.top {
+    background: linear-gradient(180deg, #c9691f 0%, #a85419 100%);
+    padding: 22px 30px;
+  }
+
+  header.top h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #9c7a3c;
+    text-shadow:
+      -1px -1px 1px rgba(0,0,0,0.4),
+      1px 1px 1px rgba(255,255,255,0.3);
+  }
+
+  /* ---------- Nav ---------- */
+  nav.mainnav {
+    display: flex;
+    gap: 34px;
+    padding: 14px 30px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  nav.mainnav a {
+    color: #8a6d1f;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  nav.mainnav a:hover {
+    text-decoration: underline;
+    color: #6b5417;
+  }
+
+  /* ---------- Divider image between nav and content ---------- */
+  .divider {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ---------- Layout ---------- */
+  .layout {
+    display: flex;
+    gap: 40px;
+    padding: 30px;
+    align-items: flex-start;
+  }
+
+  .col-main {
+    flex: 1.6;
+    min-width: 0;
+  }
+
+  .col-side {
+    width: 300px;
+    flex-shrink: 0;
+  }
+
+  h2.section-heading {
+    margin: 0 0 18px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #b0851f;
+  }
+
+  .philosophy {
+    color: #7a9a2a;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.7;
+    margin: 0 0 30px;
+  }
+
+  /* ---------- Sign-up form ---------- */
+  .field {
+    margin-bottom: 24px;
+  }
+
+  .field input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 4px;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    color: #777;
+    background: transparent;
+  }
+
+  .field input:focus {
+    outline: none;
+    border-bottom-color: #b0851f;
+  }
+
+  .field input::placeholder {
+    color: #999;
+  }
+
+  .signup-btn {
+    background: #7a8a1f;
+    color: #fff;
+    border: none;
+    padding: 12px 26px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
+  .signup-btn:hover {
+    background: #66741a;
+  }
+
+  /* ---------- Links box (with corner decorations) ---------- */
+  .links-box {
+    position: relative;
+    background: #f6ddc0;
+    padding: 20px 22px;
+    margin-bottom: 30px;
+  }
+
+  .links-box .corner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+  }
+
+  .links-box .corner-tl { top: 0; left: 0; }
+  .links-box .corner-tr { top: 0; right: 0; }
+  .links-box .corner-br { bottom: 0; right: 0; }
+  .links-box .corner-bl { bottom: 0; left: 0; }
+
+  .links-box h3 {
+    margin: 0 0 14px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .links-box ul {
+    list-style: square;
+    margin: 0;
+    padding-left: 18px;
+    color: #b0651f;
+  }
+
+  .links-box ul li {
+    margin-bottom: 8px;
+  }
+
+  .links-box ul li a {
+    color: #b0651f;
+    text-decoration: none;
+  }
+
+  .links-box ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* ---------- More info ---------- */
+  .more-info h3 {
+    margin: 0 0 14px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .more-info img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    float: left;
+    margin: 0 14px 8px 0;
+    border: 1px solid #ddd;
+    padding: 4px;
+    background: #fff;
+  }
+
+  .more-info p {
+    margin: 0;
+    line-height: 1.7;
+    font-size: 14px;
+    color: #555;
+  }
+
+  /* ---------- Footer ---------- */
+  footer.site-footer {
+    position: relative;
+  }
+
+  .footer-strip {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .footer-text {
+    text-align: center;
+    padding: 14px;
+    font-size: 15px;
+    color: #444;
+  }
+
+  @media (max-width: 900px) {
+    .layout {
+      flex-wrap: wrap;
+    }
+    .col-side {
+      width: 100%;
+    }
+    nav.mainnav {
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="top">
+    <h1>Autumn Travel Company</h1>
+  </header>
+
+  <nav class="mainnav">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Products</a>
+    <a href="#">Services</a>
+    <a href="#">Order</a>
+  </nav>
+
+  <img class="divider" src="img/line.png" alt="Autumn leaves divider">
+
+  <div class="layout">
+
+    <!-- Main column: sign-up form -->
+    <section class="col-main">
+      <h2 class="section-heading">Sign up for membership benefits</h2>
+
+      <p class="philosophy">Our philosophical values are transparency, respect, formality and responsibility. Our stimulus is your enthusiasm. Our motto is your satisfaction.</p>
+
+      <form onsubmit="return false;">
+        <div class="field">
+          <input type="text" id="username" name="username" placeholder="Username">
+        </div>
+        <div class="field">
+          <input type="email" id="email" name="email" placeholder="E-mail">
+        </div>
+        <div class="field">
+          <input type="password" id="password" name="password" placeholder="Password">
+        </div>
+        <div class="field">
+          <input type="password" id="retype-password" name="retype-password" placeholder="Retype password">
+        </div>
+
+        <button type="submit" class="signup-btn">SIGN ME UP</button>
+      </form>
+    </section>
+
+    <!-- Side column: Links + More Info -->
+    <aside class="col-side">
+
+      <div class="links-box">
+        <img class="corner corner-tl" src="img/corner1.png" alt="">
+        <img class="corner corner-tr" src="img/corner2.png" alt="">
+        <img class="corner corner-br" src="img/corner3.png" alt="">
+        <img class="corner corner-bl" src="img/corner4.png" alt="">
+
+        <h3>Links</h3>
+        <ul>
+          <li><a href="#">Make your Own Tour</a></li>
+          <li><a href="#">Maldives Tours</a></li>
+          <li><a href="#">Nature &amp; Adventure</a></li>
+          <li><a href="#">Readymade Tours</a></li>
+          <li><a href="#">Europe Tours</a></li>
+          <li><a href="#">Rusia Tours</a></li>
+        </ul>
+      </div>
+
+      <div class="more-info">
+        <h3>More info</h3>
+        <img src="img/leaf.png" alt="Autumn leaf">
+        <p>Our purpose is the client who gives to us the opportunity to serve and to make known the reality around the world.</p>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <footer class="site-footer">
+    <img class="footer-strip" src="img/footer.png" alt="Footer leaves border">
+    <p class="footer-text">&copy; 2017 Software Engineering Department | Test Date: 16 Sept 2017</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
