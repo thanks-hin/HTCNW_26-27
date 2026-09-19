@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Autumn Travel Company</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #555;
+        }
+
+        .top {
+            background: linear-gradient(180deg, #c9691f, #a85419);
+        }
+
+        .top h1 {
+            color: #9c7a3c;
+            text-shadow: -1px -1px 1px rgba(0, 0, 0, .4),
+                1px 1px 1px rgba(255, 255, 255, .3);
+            letter-spacing: 3px;
+        }
+
+        .mainnav .nav-link {
+            color: #8a6d1f;
+        }
+
+        .mainnav .nav-link:hover {
+            color: #6b5417;
+            text-decoration: underline;
+        }
+
+        .divider,
+        .footer-strip {
+            width: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .divider {
+            height: 120px;
+        }
+
+        .footer-strip {
+            height: 90px;
+        }
+
+        .section-heading {
+            color: #b0851f;
+        }
+
+        .philosophy {
+            color: #7a9a2a;
+            font-style: italic;
+            font-weight: bold;
+            line-height: 1.7;
+        }
+
+        .signup-form .form-control {
+            border: 0;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0;
+            padding-left: 4px;
+            font-family: Georgia, serif;
+        }
+
+        .signup-form .form-control:focus {
+            box-shadow: none;
+            border-bottom-color: #b0851f;
+        }
+
+        .signup-btn {
+            background: #7a8a1f;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .signup-btn:hover {
+            background: #66741a;
+            color: white;
+        }
+
+        .links-box {
+            position: relative;
+            background: #f6ddc0;
+        }
+
+        .corner {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+        }
+
+        .corner-tl {
+            top: 0;
+            left: 0;
+        }
+
+        .corner-tr {
+            top: 0;
+            right: 0;
+        }
+
+        .corner-br {
+            right: 0;
+            bottom: 0;
+        }
+
+        .corner-bl {
+            bottom: 0;
+            left: 0;
+        }
+
+        .links-box h3,
+        .more-info h3 {
+            color: #333;
+        }
+
+        .links-box ul {
+            list-style: square;
+            color: #b0651f;
+        }
+
+        .links-box a {
+            color: #b0651f;
+            text-decoration: none;
+        }
+
+        .links-box a:hover {
+            text-decoration: underline;
+        }
+
+        .more-info img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+        }
+
+        .more-info p {
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .footer-text {
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="top p-4">
+            <h1 class="h2 h-md-1 mb-0 fw-bold">
+                Autumn Travel Company
+            </h1>
+        </header>
+
+        <nav class="navbar navbar-expand-md mainnav border-bottom">
+            <div class="container-fluid px-0">
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav gap-md-4">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Order</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <img class="divider" src="img/line.png" alt="Autumn leaves divider">
+
+        <main class="row g-5 p-4">
+            <section class="col-lg-8">
+                <h2 class="section-heading h3 mb-3">
+                    Sign up for membership benefits
+                </h2>
+
+                <p class="philosophy mb-4">
+                    Our philosophical values are transparency, respect, formality
+                    and responsibility. Our stimulus is your enthusiasm.
+                    Our motto is your satisfaction.
+                </p>
+
+                <form class="signup-form" onsubmit="return false;">
+                    <div class="mb-3">
+                        <input type="text" id="username" name="username"
+                            class="form-control" placeholder="Username">
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="email" id="email" name="email"
+                            class="form-control" placeholder="E-mail">
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="password" id="password" name="password"
+                            class="form-control" placeholder="Password">
+                    </div>
+
+                    <div class="mb-4">
+                        <input type="password" id="retype-password"
+                            name="retype-password" class="form-control"
+                            placeholder="Retype password">
+                    </div>
+
+                    <button type="submit" class="btn signup-btn px-4 py-2">
+                        SIGN ME UP
+                    </button>
+                </form>
+            </section>
+
+            <aside class="col-lg-4">
+                <div class="links-box p-4 mb-4">
+                    <img class="corner corner-tl" src="img/corner1.png" alt="">
+                    <img class="corner corner-tr" src="img/corner2.png" alt="">
+                    <img class="corner corner-br" src="img/corner3.png" alt="">
+                    <img class="corner corner-bl" src="img/corner4.png" alt="">
+
+                    <h3 class="h5 fw-bold mb-3">Links</h3>
+
+                    <ul class="mb-0 ps-4">
+                        <li class="mb-2">
+                            <a href="#">Make your Own Tour</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#">Maldives Tours</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#">Nature &amp; Adventure</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#">Readymade Tours</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#">Europe Tours</a>
+                        </li>
+                        <li>
+                            <a href="#">Rusia Tours</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="more-info">
+                    <h3 class="h5 fw-bold mb-3">More info</h3>
+
+                    <img src="img/leaf.png" alt="Autumn leaf"
+                        class="float-start me-3 mb-2 border p-1">
+
+                    <p class="mb-0">
+                        Our purpose is the client who gives to us the opportunity
+                        to serve and to make known the reality around the world.
+                    </p>
+
+                    <div class="clearfix"></div>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="site-footer">
+            <img class="footer-strip" src="img/footer.png"
+                alt="Footer leaves border">
+
+            <p class="footer-text text-center p-3 mb-0">
+                &copy; 2017 Software Engineering Department |
+                Test Date: 16 Sept 2017
+            </p>
+        </footer>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

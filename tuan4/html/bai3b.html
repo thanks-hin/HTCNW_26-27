@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galaxy Cinema - Modal Login/Register</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 30px;
+    background: #fff;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 26px;
+    color: #f04a24;
+  }
+
+  .topbar .search-box {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 30px;
+  }
+
+  .topbar .right-links a {
+    color: #444;
+    text-decoration: none;
+    margin-left: 14px;
+    font-size: 14px;
+  }
+
+  .topbar .right-links a:hover {
+    color: #f04a24;
+  }
+
+  /* ---------- Main nav ---------- */
+  .mainnav {
+    background: #1a1a1a;
+  }
+
+  .mainnav .nav-link {
+    color: #ddd !important;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 14px 16px !important;
+  }
+
+  .mainnav .nav-link:hover {
+    color: #f04a24 !important;
+  }
+
+  /* ---------- Carousel ---------- */
+  #bannerCarousel img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+  }
+
+  /* ---------- Movie section ---------- */
+  .movie-section {
+    padding: 30px;
+  }
+
+  .movie-tabs .nav-link {
+    color: #666;
+    font-weight: bold;
+    border: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .movie-tabs .nav-link.active {
+    color: #f04a24;
+    border-bottom: 3px solid #f04a24;
+    background: transparent;
+  }
+
+  .movie-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .movie-card p {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  /* ---------- Modal tabs (login/register) ---------- */
+  .auth-modal .modal-content {
+    border: none;
+    border-radius: 6px;
+  }
+
+  .auth-tabs {
+    border: none;
+    padding: 20px 30px 0;
+  }
+
+  .auth-tabs .nav-link {
+    border: none;
+    color: #999;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 12px;
+  }
+
+  .auth-tabs .nav-link.active {
+    color: #f04a24;
+    border-bottom: 3px solid #f04a24;
+    background: transparent;
+  }
+
+  .auth-modal .modal-body {
+    padding: 20px 30px 30px;
+  }
+
+  .auth-modal .form-control,
+  .auth-modal .form-select {
+    margin-bottom: 14px;
+    padding: 10px 12px;
+  }
+
+  .btn-auth {
+    background: #f04a24;
+    color: #fff;
+    width: 100%;
+    padding: 12px;
+    font-weight: bold;
+    border: none;
+  }
+
+  .btn-auth:hover {
+    background: #d63d1a;
+    color: #fff;
+  }
+
+  .forgot-link {
+    display: block;
+    margin: -6px 0 16px;
+    font-size: 13px;
+    color: #444;
+    text-decoration: none;
+  }
+
+  .forgot-link:hover {
+    color: #f04a24;
+  }
+
+  .captcha-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .captcha-code {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 3px;
+    padding: 8px 14px;
+    border: 1px dashed #ccc;
+    user-select: none;
+  }
+
+  .captcha-refresh {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+  }
+
+  .captcha-row input {
+    flex: 1;
+    margin-bottom: 0 !important;
+  }
+
+  .policy-text {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .policy-text a {
+    color: #f04a24;
+    font-weight: bold;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<div class="topbar">
+  <div class="brand">
+    <span>&#9678;</span> GALAXY CINEMA
+  </div>
+  <form class="search-box" onsubmit="return false;">
+    <input type="text" class="form-control" placeholder="Tìm phim, rạp...">
+  </form>
+  <div class="right-links">
+    <a href="#" data-bs-toggle="modal" data-bs-target="#authModal">
+      &#128100; Đăng nhập
+    </a>
+    <a href="#">VN | EN</a>
+  </div>
+</div>
+
+<!-- ================= MAIN NAV ================= -->
+<nav class="mainnav navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid justify-content-center">
+    <ul class="navbar-nav flex-row flex-wrap">
+      <li class="nav-item"><a class="nav-link" href="#">MUA VÉ</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">PHIM</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">RẠP</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">ƯU ĐÃI</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">TRỢ GIÚP</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">THÀNH VIÊN</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= CAROUSEL ================= -->
+<div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../img/anh1.jpg" alt="Banner 1">
+    </div>
+    <div class="carousel-item">
+      <img src="../img/anh2.jpg" alt="Banner 2">
+    </div>
+    <div class="carousel-item">
+      <img src="../img/anh3.jpg" alt="Banner 3">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- ================= MOVIE SECTION ================= -->
+<div class="movie-section">
+  <ul class="nav movie-tabs mb-4">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">PHIM ĐANG CHIẾU</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">PHIM SẮP CHIẾU</a>
+    </li>
+  </ul>
+
+  <div class="row g-4">
+    <div class="col-md-4 movie-card">
+      <img src="../img/anh4.jpg" alt="Thạch Thảo">
+      <p>THẠCH THẢO</p>
+    </div>
+    <div class="col-md-4 movie-card">
+      <img src="../img/anh5.jpg" alt="Fantastic Beasts">
+      <p>FANTASTIC BEASTS: THE CRIMES OF G...</p>
+    </div>
+    <div class="col-md-4 movie-card">
+      <img src="../img/anh6.jpg" alt="The Grinch">
+      <p>THE GRINCH</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: LOGIN / REGISTER TABS ================= -->
+<div class="modal fade auth-modal" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="d-flex justify-content-between align-items-start">
+        <ul class="nav auth-tabs" id="authTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="login-tab" data-bs-toggle="tab"
+              data-bs-target="#login-pane" type="button" role="tab">ĐĂNG NHẬP</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="register-tab" data-bs-toggle="tab"
+              data-bs-target="#register-pane" type="button" role="tab">ĐĂNG KÝ</button>
+          </li>
+        </ul>
+        <button type="button" class="btn-close m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="tab-content" id="authTabContent">
+
+          <!-- ĐĂNG NHẬP -->
+          <div class="tab-pane fade show active" id="login-pane" role="tabpanel">
+            <p class="text-muted mb-3" style="font-size:14px;">
+              Vui lòng đăng nhập trước khi mua vé để tích luỹ điểm, cơ hội nhận thêm
+              nhiều ưu đãi từ chương trình thành viên Galaxy Cinema.
+            </p>
+            <form onsubmit="return false;">
+              <input type="email" class="form-control" placeholder="Email">
+              <input type="password" class="form-control" placeholder="Mật khẩu">
+              <a href="#" class="forgot-link">Quên mật khẩu?</a>
+              <button type="submit" class="btn btn-auth">ĐĂNG NHẬP</button>
+            </form>
+          </div>
+
+          <!-- ĐĂNG KÝ -->
+          <div class="tab-pane fade" id="register-pane" role="tabpanel">
+            <form onsubmit="return false;">
+              <input type="text" class="form-control" placeholder="Họ tên">
+
+              <div class="row">
+                <div class="col-6">
+                  <input type="tel" class="form-control" placeholder="Số điện thoại">
+                </div>
+                <div class="col-6">
+                  <select class="form-select">
+                    <option selected disabled>Chọn giới tính</option>
+                    <option>Nam</option>
+                    <option>Nữ</option>
+                  </select>
+                </div>
+              </div>
+
+              <input type="email" class="form-control" placeholder="Email">
+
+              <div class="row">
+                <div class="col-6">
+                  <input type="password" class="form-control" placeholder="Mật khẩu">
+                </div>
+                <div class="col-6">
+                  <input type="password" class="form-control" placeholder="Xác nhận mật khẩu">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-6">
+                  <select class="form-select">
+                    <option selected disabled>Chọn thành phố</option>
+                    <option>Hồ Chí Minh</option>
+                    <option>Hà Nội</option>
+                  </select>
+                </div>
+                <div class="col-6">
+                  <select class="form-select">
+                    <option selected disabled>Quận</option>
+                    <option>Quận 1</option>
+                    <option>Quận 2</option>
+                  </select>
+                </div>
+              </div>
+
+              <input type="text" class="form-control" placeholder="Địa chỉ">
+              <input type="text" class="form-control" placeholder="Chọn ngày (dd/mm/yyyy)">
+
+              <div class="captcha-row">
+                <span class="captcha-code" id="captchaCode">352176</span>
+                <button type="button" class="captcha-refresh" id="refreshCaptcha" title="Làm mới mã">&#8635;</button>
+                <input type="text" class="form-control" placeholder="Nhập mã captcha">
+              </div>
+
+              <div class="form-check policy-text">
+                <input class="form-check-input" type="checkbox" id="agreePolicy">
+                <label class="form-check-label" for="agreePolicy">
+                  Tôi đã đọc và đồng ý với <a href="#">CHÍNH SÁCH</a> của chương trình.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-auth">ĐĂNG KÝ</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script>
+  // Sinh mã captcha ngẫu nhiên khi bấm nút làm mới
+  document.getElementById('refreshCaptcha').addEventListener('click', function () {
+    const code = Math.floor(100000 + Math.random() * 900000);
+    document.getElementById('captchaCode').textContent = code;
+  });
+</script>
+</body>
+</html>

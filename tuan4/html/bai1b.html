@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bootstrap Thumbnails</title>
+
+    <!-- Bootstrap 5 local -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container-main {
+            border: 2px solid #555;
+            padding: 25px 35px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .food-card {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+            height: 100%;
+            padding: 5px;
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 310px;
+            object-fit: cover;
+            border-radius: 0;
+        }
+
+        .food-content {
+            padding: 25px 15px 30px 15px;
+        }
+
+        .food-content h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .food-content p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .btn-eat {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            color: white;
+            font-size: 18px;
+            padding: 8px 20px;
+        }
+
+        .btn-eat:hover {
+            background-color: #0b5ed7;
+            border-color: #0a58ca;
+            color: white;
+        }
+
+        .btn-later {
+            font-size: 18px;
+            padding: 8px 20px;
+            margin-left: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 767.98px) {
+            .container-main {
+                padding: 15px;
+            }
+
+            .food-card {
+                margin-bottom: 20px;
+            }
+
+            .food-card img {
+                height: auto;
+            }
+
+            .food-content h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-main container">
+
+        <div class="row g-4">
+
+            <!-- Thumbnail 1 -->
+            <div class="col-12 col-md-4">
+                <div class="food-card">
+
+                    <img src="../img/anh1.jpg"
+                         class="img-fluid img-thumbnail"
+                         alt="Meats">
+
+                    <div class="food-content">
+                        <h2>Meats</h2>
+
+                        <p>
+                            Bacon ipsum dolor sit amet sirloin
+                            pancetta shoulder tongue doner,
+                            shank sausage.
+                        </p>
+
+                        <button class="btn btn-eat">
+                            Eat now!
+                        </button>
+
+                        <button class="btn btn-outline-secondary btn-later">
+                            Later...
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Thumbnail 2 -->
+            <div class="col-12 col-md-4">
+                <div class="food-card">
+
+                    <img src="../img/anh2.jpg"
+                         class="img-fluid img-thumbnail"
+                         alt="Meats">
+
+                    <div class="food-content">
+                        <h2>Meats</h2>
+
+                        <p>
+                            Bacon ipsum dolor sit amet sirloin
+                            pancetta shoulder tongue doner,
+                            shank sausage.
+                        </p>
+
+                        <button class="btn btn-eat">
+                            Eat now!
+                        </button>
+
+                        <button class="btn btn-outline-secondary btn-later">
+                            Later...
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Thumbnail 3 -->
+            <div class="col-12 col-md-4">
+                <div class="food-card">
+
+                    <img src="../img/anh3.jpg"
+                         class="img-fluid img-thumbnail"
+                         alt="Meats">
+
+                    <div class="food-content">
+                        <h2>Meats</h2>
+
+                        <p>
+                            Bacon ipsum dolor sit amet sirloin
+                            pancetta shoulder tongue doner,
+                            shank sausage.
+                        </p>
+
+                        <button class="btn btn-eat">
+                            Eat now!
+                        </button>
+
+                        <button class="btn btn-outline-secondary btn-later">
+                            Later...
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bootstrap 5 JS local -->
+    <script src="../css/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

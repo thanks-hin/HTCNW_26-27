@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ sưu tập hình ảnh</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <style>
+        .picture-frame {
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .image-box,
+        .left-image-box {
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .image-box {
+            height: 220px;
+        }
+
+        .left-image-box {
+            height: 440px;
+        }
+
+        .image-box img,
+        .left-image-box img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @media (max-width: 991px) {
+            .left-image-box {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .image-box,
+            .left-image-box {
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <div class="picture-frame">
+            <div class="row g-0">
+                <!-- Ảnh bên trái, hẹp hơn và cao bằng hai hàng -->
+                <div class="col-lg-3">
+                    <div class="left-image-box">
+                        <img src="../img/anh6.jpg" alt="Ảnh 6">
+                    </div>
+                </div>
+
+                <!-- Hai hàng gồm 5 ảnh -->
+                <div class="col-lg-9">
+                    <div class="row g-0">
+                        <div class="col-6">
+                            <div class="image-box">
+                                <img src="../img/anh1.jpg" alt="Ảnh 1">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="image-box">
+                                <img src="../img/anh2.jpg" alt="Ảnh 2">
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="image-box">
+                                <img src="../img/anh3.jpg" alt="Ảnh 3">
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="image-box">
+                                <img src="../img/anh4.jpg" alt="Ảnh 4">
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="image-box">
+                                <img src="../img/anh5.jpg" alt="Ảnh 5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

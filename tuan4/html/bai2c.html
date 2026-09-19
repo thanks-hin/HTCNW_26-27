@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đăng ký tài khoản Facebook</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6fa;
+  }
+  .form-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border: 1px solid #b6d0e2;
+    border-radius: 6px;
+    padding: 30px 35px;
+  }
+  .form-wrapper label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 6px;
+  }
+  .form-wrapper .form-control {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+  }
+  .form-wrapper .form-control::placeholder {
+    color: #aaa;
+  }
+  .btn-signup {
+    background-color: #1abc9c;
+    border: none;
+    color: #fff;
+    padding: 8px 22px;
+  }
+  .btn-signup:hover {
+    background-color: #17a589;
+    color: #fff;
+  }
+  .btn-facebook {
+    background-color: #2f8fef;
+    border: none;
+    color: #fff;
+    padding: 8px 22px;
+  }
+  .btn-facebook:hover {
+    background-color: #1a75d1;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="form-wrapper">
+    <form onsubmit="return false;">
+      <div class="row">
+
+        <!-- Cột trái -->
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username*</label>
+            <input type="text" class="form-control" id="username" placeholder="Choose your username" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">E-mail*</label>
+            <input type="email" class="form-control" id="email" placeholder="Your current email address" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password*</label>
+            <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="fullname" class="form-label">Full name*</label>
+            <input type="text" class="form-control" id="fullname" placeholder="Your First name and Last name" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label d-block">Gender*</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male" required>
+              <label class="form-check-label" for="genderMale">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female">
+              <label class="form-check-label" for="genderFemale">Female</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột phải -->
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="company" class="form-label">Company name*</label>
+            <input type="text" class="form-control" id="company" placeholder="your company name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="category" class="form-label">Category*</label>
+            <input type="text" class="form-control" id="category" placeholder="skills catagory" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="contact" class="form-label">Contact number*</label>
+            <input type="tel" class="form-control" id="contact" placeholder="provide your number" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="location" class="form-label">Your Location*</label>
+            <input type="text" class="form-control" id="location" placeholder="Your Pincode and City" required>
+          </div>
+
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="terms" required>
+            <label class="form-check-label" for="terms">Agree with the terms and conditions</label>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Nút submit -->
+      <div class="d-flex align-items-center gap-2 mt-3">
+        <button type="submit" class="btn btn-signup">Signup</button>
+        <span>or</span>
+        <button type="button" class="btn btn-facebook">Sign Up with Facebook</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

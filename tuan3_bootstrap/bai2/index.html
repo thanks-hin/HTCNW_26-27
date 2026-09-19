@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FlowerBox 360</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #555;
+        }
+
+        .top {
+            background: #2b5177;
+            color: white;
+        }
+
+        .brand img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .brand h1 {
+            font-size: 34px;
+        }
+
+        .brand p {
+            color: #dfe8f0;
+        }
+
+        .search-box input {
+            background: #1e3f61;
+            color: white;
+            border-color: #14314f;
+        }
+
+        .search-box input::placeholder {
+            color: #a8bdd1;
+        }
+
+        .mainnav .nav-link {
+            color: white;
+            font-weight: bold;
+            background: #33608c;
+            border-right: 1px solid #2b5177;
+        }
+
+        .mainnav .nav-link:hover,
+        .mainnav .nav-link.active {
+            background: #4577a8;
+            color: white;
+        }
+
+        .section-heading {
+            color: #444;
+        }
+
+        .rule {
+            border-top: 1px dotted #999;
+        }
+
+        .intro-text {
+            color: #c0392b;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .side-box {
+            background: #f4f4f4;
+        }
+
+        .read-more {
+            color: #2b5177;
+            font-weight: bold;
+        }
+
+        .site-footer {
+            background: #14314f;
+            color: white;
+        }
+
+        .site-footer a {
+            color: #9fc1e0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid px-0">
+
+        <header class="top">
+            <div class="container py-3">
+                <div class="row align-items-center g-3">
+                    <div class="col-lg-7">
+                        <div class="brand d-flex align-items-center gap-3">
+                            <img src="img/flower.png" alt="FlowerBox 360 Logo">
+                            <div>
+                                <h1 class="mb-0 fw-bold">FlowerBox 360</h1>
+                                <p class="mb-0 fst-italic">
+                                    ...to get your daily dose of luxury roses!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <form class="search-box d-flex justify-content-lg-end gap-1"
+                            onsubmit="return false;">
+                            <input type="search" class="form-control"
+                                placeholder="Search the site..." aria-label="Search">
+                            <button type="submit" class="btn btn-dark">GO</button>
+                        </form>
+                    </div>
+                </div>
+
+                <nav class="navbar navbar-expand-lg navbar-dark mt-3 mainnav">
+                    <button class="navbar-toggler ms-auto" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#mainNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="mainNav">
+                        <ul class="navbar-nav w-100">
+                            <li class="nav-item flex-fill text-center">
+                                <a class="nav-link active" href="#">Home</a>
+                            </li>
+                            <li class="nav-item flex-fill text-center">
+                                <a class="nav-link" href="#">Promotion</a>
+                            </li>
+                            <li class="nav-item flex-fill text-center">
+                                <a class="nav-link" href="#">Gift Baskets</a>
+                            </li>
+                            <li class="nav-item flex-fill text-center">
+                                <a class="nav-link" href="#">Flower Services</a>
+                            </li>
+                            <li class="nav-item flex-fill text-center">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container py-4">
+            <div class="row g-4">
+
+                <section class="col-lg-5">
+                    <h2 class="section-heading h4">Why Not Contact Us Today!</h2>
+                    <hr class="rule">
+
+                    <p class="intro-text">
+                        For FlowerBox 360 shoppers, that means not only can you send your
+                        friends and loved ones the highest quality flowers found online,
+                        but that you can do so at a great value.
+                    </p>
+
+                    <form onsubmit="return false;">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Name:</label>
+                                <input type="text" id="name" class="form-control">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" id="email" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Telephone:</label>
+                                <input type="tel" id="phone" class="form-control">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="subject" class="form-label">Subject:</label>
+                                <input type="text" id="subject" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message:</label>
+                            <textarea id="message" class="form-control" rows="5"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-secondary me-2">
+                            Submit
+                        </button>
+                        <button type="reset" class="btn btn-outline-secondary">
+                            Reset
+                        </button>
+                    </form>
+                </section>
+
+                <section class="col-lg-4">
+                    <h2 class="section-heading h4">FlowerBox 360 Info!</h2>
+                    <hr class="rule">
+
+                    <div class="mb-4 lh-lg">
+                        <p class="mb-0">Operating Hours:</p>
+                        <p class="mb-0">Monday-Friday: 9:00am-5:00pm.</p>
+                        <p class="mb-0">Saturday: 9:00am-1:00pm.</p>
+                        <p class="mb-0">Sunday: Closed (No Deliveries)</p>
+                        <p class="mb-0">ORDER ONLINE 24/7</p>
+                    </div>
+
+                    <div class="mb-4 lh-lg">
+                        <p class="mb-0">Software Engineering Dept.</p>
+                        <p class="mb-0">Information Technology Faculty</p>
+                        <p class="mb-0">First Floor, H Building</p>
+                    </div>
+
+                    <div class="lh-lg">
+                        <p class="mb-0">12 Nguyen Van Bao, Ward 4,</p>
+                        <p class="mb-0">Go Vap District, Ho Chi Minh City</p>
+                        <p class="mb-0">Tel: 0283.8940.390</p>
+                        <p class="mb-0">Fax: 0283.9940.954</p>
+                    </div>
+                </section>
+
+                <aside class="col-lg-3">
+                    <div class="side-box p-3">
+                        <h2 class="section-heading h4">Discounts &amp; Specials</h2>
+                        <hr class="rule">
+
+                        <img src="img/rose.png" alt="Rose"
+                            class="img-fluid border my-2">
+
+                        <p class="lh-lg">
+                            FlowerBox 360 offers many great discounts throughout the year,
+                            from coupons and coupon codes, to promo codes and other savings.
+                            We also offer military flower discounts to our wonderful troops!
+                        </p>
+
+                        <a class="read-more d-block text-end text-decoration-none"
+                            href="#">
+                            Read More &raquo;
+                        </a>
+                    </div>
+                </aside>
+
+            </div>
+        </main>
+
+        <footer class="site-footer text-center p-3">
+            <p class="mb-0">
+                Copyright &copy; 2017 - All Rights Reserved -
+                <a href="#">
+                    Software Engineering Department –
+                    Industrial University of Ho Chi Minh City
+                </a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

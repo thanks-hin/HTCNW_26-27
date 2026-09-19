@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bootstrap Table</title>
+
+    <!-- Bootstrap 5 local -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Khung bao quanh bảng */
+        .table-container {
+            width: 95%;
+            margin: 50px auto;
+            padding: 35px 45px;
+            border: 1px solid #ddd;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+        }
+
+        /* Bảng */
+        .custom-table {
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
+
+        /* Tiêu đề bảng */
+        .custom-table thead th {
+            font-size: 16px;
+            font-weight: 600;
+            color: #555;
+            padding: 18px 15px;
+            border-bottom: 1px solid #dee2e6;
+            background-color: #fff;
+        }
+
+        /* Các dòng */
+        .custom-table tbody tr {
+            transition: all 0.2s ease;
+        }
+
+        /* Hover state */
+        .custom-table tbody tr:hover {
+            background-color: #f8f9fa;
+            cursor: pointer;
+        }
+
+        .custom-table tbody td {
+            padding: 20px 15px;
+            border-bottom: 1px solid #e9ecef;
+            color: #555;
+        }
+
+        /* Name */
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-width: 240px;
+        }
+
+        /* Avatar */
+        .avatar {
+            width: 58px;
+            height: 58px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            flex-shrink: 0;
+        }
+
+        /* Tên */
+        .user-name {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        /* Email / secondary text */
+        .secondary-text {
+            display: block;
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* Title */
+        .job-title {
+            display: block;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        /* Department */
+        .department {
+            display: block;
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* Badge */
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background-color: #d1f2df;
+            color: #198754;
+        }
+
+        .status-onboarding {
+            background-color: #dcecff;
+            color: #0d6efd;
+        }
+
+        .status-pending {
+            background-color: #fff0c9;
+            color: #997404;
+        }
+
+        /* Position */
+        .position {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* Nút Edit */
+        .edit-btn {
+            color: #0d6efd;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .edit-btn:hover {
+            color: #fff;
+            background-color: #0d6efd;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+
+            .table-container {
+                width: 95%;
+                padding: 15px;
+                margin: 20px auto;
+            }
+
+            .custom-table {
+                min-width: 800px;
+            }
+
+            .table-responsive {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="table-container">
+
+        <div class="table-responsive">
+
+            <table class="table custom-table">
+
+                <!-- HEADER -->
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Position</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <!-- BODY -->
+                <tbody>
+
+                    <!-- Người 1 -->
+                    <tr>
+
+                        <td>
+                            <div class="user-info">
+
+                                <img src="../img/anh1.jpg"
+                                     alt="John Doe"
+                                     class="avatar">
+
+                                <div>
+                                    <span class="user-name">
+                                        John Doe
+                                    </span>
+
+                                    <span class="secondary-text">
+                                        john.doe@gmail.com
+                                    </span>
+                                </div>
+
+                            </div>
+                        </td>
+
+                        <td>
+                            <span class="job-title">
+                                Software engineer
+                            </span>
+
+                            <span class="department">
+                                IT department
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="status-badge status-active">
+                                Active
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="position">
+                                Senior
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="#" class="edit-btn">
+                                Edit
+                            </a>
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Người 2 -->
+                    <tr>
+
+                        <td>
+                            <div class="user-info">
+
+                                <img src="../img/anh2.jpg"
+                                     alt="Alex Ray"
+                                     class="avatar">
+
+                                <div>
+                                    <span class="user-name">
+                                        Alex Ray
+                                    </span>
+
+                                    <span class="secondary-text">
+                                        alex.ray@gmail.com
+                                    </span>
+                                </div>
+
+                            </div>
+                        </td>
+
+                        <td>
+                            <span class="job-title">
+                                Consultant
+                            </span>
+
+                            <span class="department">
+                                Finance
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="status-badge status-onboarding">
+                                Onboarding
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="position">
+                                Junior
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="#" class="edit-btn">
+                                Edit
+                            </a>
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Người 3 -->
+                    <tr>
+
+                        <td>
+                            <div class="user-info">
+
+                                <img src="../img/anh3.jpg"
+                                     alt="Kate Huntington"
+                                     class="avatar">
+
+                                <div>
+                                    <span class="user-name">
+                                        Kate Huntington
+                                    </span>
+
+                                    <span class="secondary-text">
+                                        kate.huntington@gmail.com
+                                    </span>
+                                </div>
+
+                            </div>
+                        </td>
+
+                        <td>
+                            <span class="job-title">
+                                Designer
+                            </span>
+
+                            <span class="department">
+                                UI & UX
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="status-badge status-pending">
+                                Pending
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="position">
+                                Senior
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="#" class="edit-btn">
+                                Edit
+                            </a>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
