@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant temlplate</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        /* Cho phép menu xuống dòng thay vì tràn ra ngoài khi hết chỗ */
+        .navbar-nav {
+            flex-wrap: wrap;
+        }
+
+        .navbar-nav .nav-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-download-now {
+            white-space: nowrap;
+            margin-left: 8px;
+        }
+
+        /* ---------- Hero section ---------- */
+        .hero-section {
+            background: #123a49;
+            padding: 60px 30px 80px;
+        }
+
+        .hero-title {
+            color: #fff;
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: bold;
+            font-size: 52px;
+            margin-bottom: 50px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .hero-text-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            padding-left: 40px;
+        }
+
+        .btn-new-menu {
+            background: #f0396b;
+            color: #fff;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 16px 30px;
+            border: none;
+            border-radius: 3px;
+            margin-bottom: 18px;
+        }
+
+        .btn-new-menu:hover {
+            background: #d92c5a;
+            color: #fff;
+        }
+
+        .btn-terrace {
+            background: transparent;
+            color: #fff;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 15px 30px;
+            border: 1px solid #fff;
+            border-radius: 3px;
+            margin-bottom: 30px;
+        }
+
+        .btn-terrace:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .hero-desc {
+            color: #d9e4e8;
+            font-size: 15px;
+            line-height: 1.9;
+            max-width: 360px;
+        }
+
+        @media (max-width: 767px) {
+            .hero-text-col {
+                padding-left: 0;
+                margin-top: 30px;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- sử dụng extension bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">RESTAURANT TEMPLATE</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNavContent" aria-controls="mainNavContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavContent">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle disabled" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            BLOCK DEMOS 1
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            BLOCK DEMOS 2
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            SITE TEMPLATES 1
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            SITE TEMPLATES 2
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary text-white btn-download-now" href="#">DOWNLOAD NOW</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero-section">
+        <h1 class="hero-title">Restaurant</h1>
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 hero-image">
+                    <img src="../img/pizzas.jpg" alt="Pizza">
+                </div>
+                <div class="col-md-6 hero-text-col">
+                    <div>
+                        <button class="btn btn-new-menu d-block">New Menu</button>
+                        <button class="btn btn-terrace d-block">Terrace</button>
+                        <p class="hero-desc">
+                            The restaurant area allowed to accommodate a banquet hall,
+                            and a children hall, where children and their parents can
+                            fully enjoy the most interesting animation programs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+
+</html>

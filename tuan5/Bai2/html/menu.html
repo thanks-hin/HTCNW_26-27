@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Feane - Our Menu</title>
+
+<!-- Bootstrap có sẵn -->
+<link rel="stylesheet" href="../css/bootstrap.css">
+
+<style>
+    /* =========================
+       FONT AWESOME
+    ========================= */
+
+    @font-face {
+        font-family: "FontAwesome";
+        src: url("../fonts/fontawesome-webfont.woff2") format("woff2"),
+             url("../fonts/fontawesome-webfont.woff") format("woff");
+    }
+
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #ffffff;
+        color: #222831;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar-custom {
+        width: 100%;
+        background: #222831;
+        padding: 18px 0;
+    }
+
+    .navbar-container {
+        width: 1140px;
+        max-width: calc(100% - 40px);
+        margin: auto;
+
+        display: flex;
+        align-items: center;
+    }
+
+
+    /* Logo */
+
+    .logo {
+        color: #ffffff;
+
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: 36px;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .logo:hover {
+        color: #ffffff;
+    }
+
+
+    /* =========================
+       NAVIGATION MENU
+    ========================= */
+
+    .nav-menu {
+        display: flex;
+        align-items: center;
+
+        list-style: none;
+
+        margin: 0 0 0 auto;
+        padding: 0;
+    }
+
+    .nav-menu li {
+        margin-left: 35px;
+    }
+
+    .nav-menu a {
+        color: #ffffff;
+
+        font-size: 14px;
+
+        text-transform: uppercase;
+
+        transition: 0.3s;
+    }
+
+    .nav-menu a:hover {
+        color: #ffbe33;
+    }
+
+    .nav-menu a.active {
+        color: #ffbe33;
+    }
+
+
+    /* =========================
+       NAV ICONS
+    ========================= */
+
+    .nav-icons {
+        display: flex;
+        align-items: center;
+
+        margin-left: 35px;
+    }
+
+    .nav-icons a {
+        color: #ffffff;
+
+        font-family: "FontAwesome";
+
+        font-size: 16px;
+
+        margin-left: 18px;
+
+        transition: 0.3s;
+    }
+
+    .nav-icons a:hover {
+        color: #ffbe33;
+    }
+
+    .icon-user::before {
+        content: "\f007";
+    }
+
+    .icon-cart::before {
+        content: "\f07a";
+    }
+
+    .icon-search::before {
+        content: "\f002";
+    }
+
+
+    /* =========================
+       ORDER ONLINE
+    ========================= */
+
+    .order-online {
+        display: inline-block;
+
+        margin-left: 25px;
+
+        padding: 10px 24px;
+
+        color: #ffffff;
+
+        background: #ffbe33;
+
+        border-radius: 25px;
+
+        font-size: 14px;
+
+        transition: 0.3s;
+    }
+
+    .order-online:hover {
+        color: #ffffff;
+        background: #e8a91d;
+    }
+
+
+    /* =========================
+       MENU SECTION
+    ========================= */
+
+    .menu-section {
+        padding: 70px 0 90px;
+
+        background: #ffffff;
+    }
+
+    .menu-container {
+        width: 1140px;
+        max-width: calc(100% - 40px);
+
+        margin: auto;
+    }
+
+
+    /* =========================
+       TITLE
+    ========================= */
+
+    .menu-title {
+        text-align: center;
+
+        margin-bottom: 30px;
+
+        color: #222831;
+
+        font-family: "Brush Script MT",
+                     "Segoe Script",
+                     cursive;
+
+        font-size: 48px;
+
+        font-weight: bold;
+    }
+
+
+    /* =========================
+       CATEGORY FILTER
+    ========================= */
+
+    .category-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 10px;
+
+        list-style: none;
+
+        margin: 0 0 40px;
+        padding: 0;
+    }
+
+    .category-list button {
+        border: none;
+        outline: none;
+
+        padding: 9px 22px;
+
+        border-radius: 25px;
+
+        background: transparent;
+
+        color: #222831;
+
+        font-size: 15px;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+    }
+
+    .category-list button:hover {
+        background: #222831;
+        color: #ffffff;
+    }
+
+    .category-list button.active {
+        background: #222831;
+        color: #ffffff;
+    }
+
+
+    /* =========================
+       PRODUCT GRID
+    ========================= */
+
+    .product-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 25px;
+    }
+
+
+    /* =========================
+       PRODUCT CARD
+    ========================= */
+
+    .product-card {
+        overflow: hidden;
+
+        background: #222831;
+
+        border-radius: 15px;
+
+        color: #ffffff;
+
+        transition: 0.3s;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+
+        box-shadow:
+            0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+
+    /* =========================
+       PRODUCT IMAGE
+    ========================= */
+
+    .product-image {
+        height: 230px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 25px;
+
+        background: #f1f2f3;
+
+        border-radius:
+            15px 15px 0 45px;
+    }
+
+    .product-image img {
+        width: auto;
+        height: auto;
+
+        max-width: 85%;
+        max-height: 190px;
+
+        object-fit: contain;
+
+        transition: 0.3s;
+    }
+
+    .product-card:hover .product-image img {
+        transform: scale(1.05);
+    }
+
+
+    /* =========================
+       PRODUCT INFORMATION
+    ========================= */
+
+    .product-info {
+        padding: 22px 20px 20px;
+    }
+
+    .product-name {
+        margin-bottom: 10px;
+
+        color: #ffffff;
+
+        font-size: 21px;
+
+        font-weight: 600;
+    }
+
+    .product-description {
+        min-height: 45px;
+
+        margin-bottom: 18px;
+
+        color: #dddddd;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+
+    /* =========================
+       PRICE + CART
+    ========================= */
+
+    .product-bottom {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+    }
+
+    .product-price {
+        color: #ffffff;
+
+        font-size: 16px;
+
+        font-weight: bold;
+    }
+
+    .cart-button {
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: #ffbe33;
+
+        color: #ffffff;
+
+        font-family: "FontAwesome";
+
+        font-size: 15px;
+
+        transition: 0.3s;
+    }
+
+    .cart-button::before {
+        content: "\f07a";
+    }
+
+    .cart-button:hover {
+        color: #ffffff;
+
+        background: #e8a91d;
+
+        transform: scale(1.08);
+    }
+
+
+    /* =========================
+       HIDDEN PRODUCT
+    ========================= */
+
+    .product-card.hidden {
+        display: none;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 992px) {
+
+        .nav-menu li {
+            margin-left: 18px;
+        }
+
+        .nav-icons {
+            margin-left: 18px;
+        }
+
+        .nav-icons a {
+            margin-left: 12px;
+        }
+
+        .order-online {
+            margin-left: 15px;
+            padding: 9px 17px;
+        }
+
+        .product-grid {
+            grid-template-columns:
+                repeat(2, 1fr);
+        }
+    }
+
+
+    @media (max-width: 768px) {
+
+        .navbar-container {
+            flex-wrap: wrap;
+        }
+
+        .nav-menu {
+            order: 3;
+
+            width: 100%;
+
+            justify-content: center;
+
+            margin-top: 15px;
+        }
+
+        .nav-menu li {
+            margin: 0 10px;
+        }
+
+        .nav-icons {
+            margin-left: auto;
+        }
+
+        .order-online {
+            display: none;
+        }
+
+        .product-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+
+    @media (max-width: 576px) {
+
+        .navbar-container {
+            max-width: calc(100% - 25px);
+        }
+
+        .logo {
+            font-size: 30px;
+        }
+
+        .nav-icons {
+            display: none;
+        }
+
+        .nav-menu {
+            justify-content: flex-start;
+
+            overflow-x: auto;
+
+            padding-bottom: 5px;
+        }
+
+        .nav-menu li {
+            margin-left: 0;
+            margin-right: 15px;
+        }
+
+        .nav-menu a {
+            font-size: 12px;
+        }
+
+        .menu-section {
+            padding-top: 45px;
+        }
+
+        .menu-title {
+            font-size: 42px;
+        }
+
+        .category-list {
+            flex-wrap: wrap;
+
+            gap: 5px;
+
+            margin-bottom: 30px;
+        }
+
+        .category-list button {
+            padding: 8px 16px;
+        }
+
+        .product-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ==================================================
+     NAVIGATION BAR
+================================================== -->
+
+<nav class="navbar-custom">
+
+    <div class="navbar-container">
+
+        <!-- Logo -->
+        <a href="home.html" class="logo">
+            Feane
+        </a>
+
+
+        <!-- Navigation -->
+        <ul class="nav-menu">
+
+            <li>
+                <a href="home.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="menu.html" class="active">
+                    Menu
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="book.html">
+                    Book Table
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- Icons -->
+        <div class="nav-icons">
+
+            <a href="#" class="icon-user"
+               title="User"></a>
+
+            <a href="order.html" class="icon-cart"
+               title="Cart"></a>
+
+            <a href="#" class="icon-search"
+               title="Search"></a>
+
+        </div>
+
+
+        <!-- Order Online -->
+        <a href="order.html" class="order-online">
+            Order Online
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ==================================================
+     MENU SECTION
+================================================== -->
+
+<section class="menu-section">
+
+    <div class="menu-container">
+
+
+        <!-- TITLE -->
+
+        <h1 class="menu-title">
+            Our Menu
+        </h1>
+
+
+        <!-- ==================================================
+             CATEGORY FILTER
+        ================================================== -->
+
+        <ul class="category-list">
+
+            <li>
+                <button
+                    class="filter-btn active"
+                    data-filter="all">
+                    All
+                </button>
+            </li>
+
+            <li>
+                <button
+                    class="filter-btn"
+                    data-filter="burger">
+                    Burger
+                </button>
+            </li>
+
+            <li>
+                <button
+                    class="filter-btn"
+                    data-filter="pizza">
+                    Pizza
+                </button>
+            </li>
+
+            <li>
+                <button
+                    class="filter-btn"
+                    data-filter="pasta">
+                    Pasta
+                </button>
+            </li>
+
+            <li>
+                <button
+                    class="filter-btn"
+                    data-filter="fries">
+                    Fries
+                </button>
+            </li>
+
+        </ul>
+
+
+
+        <!-- ==================================================
+             PRODUCT LIST
+        ================================================== -->
+
+        <div class="product-grid">
+
+
+            <!-- =========================
+                 PRODUCT 1
+            ========================== -->
+
+            <div class="product-card"
+                 data-category="pizza">
+
+                <div class="product-image">
+
+                    <img
+                        src="../images/f1.png"
+                        alt="Delicious Pizza">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h2 class="product-name">
+                        Delicious Pizza
+                    </h2>
+
+                    <p class="product-description">
+                        Veniam debitis quaerat officiis quasi
+                        cupiditate quo, quisquam velit, magnam
+                        voluptatem repellendus sed eaque.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            $20
+                        </span>
+
+                        <a
+                            href="order.html"
+                            class="cart-button"
+                            title="Add to cart">
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 PRODUCT 2
+            ========================== -->
+
+            <div class="product-card"
+                 data-category="burger">
+
+                <div class="product-image">
+
+                    <img
+                        src="../images/f2.png"
+                        alt="Delicious Burger">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h2 class="product-name">
+                        Delicious Burger
+                    </h2>
+
+                    <p class="product-description">
+                        Veniam debitis quaerat officiis quasi
+                        cupiditate quo, quisquam velit, magnam
+                        voluptatem repellendus sed eaque.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            $15
+                        </span>
+
+                        <a
+                            href="order.html"
+                            class="cart-button"
+                            title="Add to cart">
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 PRODUCT 3
+            ========================== -->
+
+            <div class="product-card"
+                 data-category="pizza">
+
+                <div class="product-image">
+
+                    <img
+                        src="../images/f3.png"
+                        alt="Delicious Pizza">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h2 class="product-name">
+                        Delicious Pizza
+                    </h2>
+
+                    <p class="product-description">
+                        Veniam debitis quaerat officiis quasi
+                        cupiditate quo, quisquam velit, magnam
+                        voluptatem repellendus sed eaque.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            $17
+                        </span>
+
+                        <a
+                            href="order.html"
+                            class="cart-button"
+                            title="Add to cart">
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     JAVASCRIPT - FILTER MENU
+================================================== -->
+
+<script>
+
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
+
+    const products =
+        document.querySelectorAll(".product-card");
+
+
+    filterButtons.forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+            /*
+                Xóa trạng thái active
+                khỏi tất cả button
+            */
+
+            filterButtons.forEach(function(btn) {
+                btn.classList.remove("active");
+            });
+
+
+            /*
+                Đặt active cho button
+                vừa được click
+            */
+
+            this.classList.add("active");
+
+
+            /*
+                Lấy category cần lọc
+            */
+
+            const filter =
+                this.getAttribute("data-filter");
+
+
+            /*
+                Hiển thị / ẩn sản phẩm
+            */
+
+            products.forEach(function(product) {
+
+                const category =
+                    product.getAttribute("data-category");
+
+
+                if (
+                    filter === "all" ||
+                    category === filter
+                ) {
+
+                    product.classList.remove("hidden");
+
+                } else {
+
+                    product.classList.add("hidden");
+
+                }
+
+            });
+
+        });
+
+    });
+
+</script>
+```
+
+</body>
+
+</html>
