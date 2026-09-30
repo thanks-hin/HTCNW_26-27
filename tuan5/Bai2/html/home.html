@@ -14,471 +14,356 @@
     <style>
         @font-face {
             font-family: "FontAwesome";
-            src: url("../fonts/fontawesome-webfont.woff2") format("woff2"),
-                 url("../fonts/fontawesome-webfont.woff") format("woff");
+            src: url("../fonts/fontawesome-webfont.woff2") format("woff2"), url("../fonts/fontawesome-webfont.woff") format("woff");
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         html {
             scroll-behavior: smooth;
         }
-
+        
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
-
+        
         a {
             text-decoration: none;
         }
-
         /* =========================
            HERO / HOME
         ========================= */
-
+        
         .hero {
             min-height: 100vh;
             position: relative;
-
             background-image: url("../images/hero-bg.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-
             color: white;
         }
-
         /*
             Lớp phủ giúp chữ nổi bật hơn
             nhưng vẫn giữ nguyên ảnh hero-bg.jpg
         */
+        
         .hero::before {
             content: "";
             position: absolute;
             inset: 0;
-
             background: rgba(0, 0, 0, 0.15);
-
             z-index: 1;
         }
-
         /* =========================
            NAVBAR
         ========================= */
-
+        
         .navbar-custom {
             position: absolute;
             top: 0;
             left: 0;
-
             width: 100%;
-
             padding: 20px 0;
-
             z-index: 10;
         }
-
+        
         .navbar-container {
             width: 1140px;
             max-width: calc(100% - 40px);
-
             margin: auto;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-
         /* Logo */
-
+        
         .logo {
             color: white;
-
             font-family: Georgia, "Times New Roman", serif;
-
             font-size: 36px;
             font-weight: bold;
             font-style: italic;
         }
-
+        
         .logo:hover {
             color: white;
         }
-
         /* Menu */
-
+        
         .nav-menu {
             display: flex;
             align-items: center;
-
             list-style: none;
-
             margin: 0;
             padding: 0;
-
             margin-left: auto;
         }
-
+        
         .nav-menu li {
             margin-left: 35px;
         }
-
+        
         .nav-menu a {
             color: white;
-
             font-size: 14px;
-
             text-transform: uppercase;
-
             transition: 0.3s;
         }
-
+        
         .nav-menu a:hover,
         .nav-menu a.active {
             color: #ffbe33;
         }
-
         /* =========================
            ICONS
         ========================= */
-
+        
         .nav-icons {
             display: flex;
             align-items: center;
-
             margin-left: 35px;
         }
-
+        
         .nav-icons a {
             color: white;
-
             margin-left: 18px;
-
             font-family: "FontAwesome";
-
             font-size: 16px;
-
             transition: 0.3s;
         }
-
+        
         .nav-icons a:hover {
             color: #ffbe33;
         }
-
         /*
             Font Awesome:
             \f007 = user
             \f07a = shopping cart
             \f002 = search
         */
-
+        
         .icon-user::before {
             content: "\f007";
         }
-
+        
         .icon-cart::before {
             content: "\f07a";
         }
-
+        
         .icon-search::before {
             content: "\f002";
         }
-
         /* =========================
            ORDER ONLINE BUTTON
         ========================= */
-
+        
         .order-online {
             display: inline-block;
-
             margin-left: 25px;
-
             padding: 10px 25px;
-
             color: white;
             background: #ffbe33;
-
             border-radius: 25px;
-
             font-size: 14px;
-
             transition: 0.3s;
         }
-
+        
         .order-online:hover {
             color: white;
-
             background: #e8a91d;
         }
-
         /* =========================
            HERO CONTENT
         ========================= */
-
+        
         .hero-content {
             position: relative;
-
             z-index: 2;
-
             min-height: 100vh;
-
             width: 1140px;
             max-width: calc(100% - 40px);
-
             margin: auto;
-
             display: flex;
             align-items: center;
         }
-
+        
         .hero-text {
             width: 50%;
-
             padding-top: 30px;
         }
-
         /* Tiêu đề */
-
+        
         .hero-title {
             margin-bottom: 20px;
-
             color: white;
-
-            font-family: "Brush Script MT",
-                         "Segoe Script",
-                         cursive;
-
+            font-family: "Brush Script MT", "Segoe Script", cursive;
             font-size: 70px;
-
             font-weight: bold;
-
             line-height: 1.05;
         }
-
         /* Mô tả */
-
+        
         .hero-description {
             max-width: 560px;
-
             margin-bottom: 30px;
-
             color: #eeeeee;
-
             font-size: 15px;
-
             line-height: 1.7;
         }
-
         /* =========================
            ORDER NOW
         ========================= */
-
+        
         .order-now {
             display: inline-block;
-
             padding: 12px 32px;
-
             color: white;
-
             background: #ffbe33;
-
             border-radius: 25px;
-
             font-size: 15px;
-
             transition: 0.3s;
         }
-
+        
         .order-now:hover {
             color: white;
-
             background: #e8a91d;
         }
-
         /* =========================
            SLIDER DOTS
         ========================= */
-
+        
         .slider-dots {
             position: absolute;
-
             left: 50%;
-
             bottom: 40px;
-
             transform: translateX(-50%);
-
             z-index: 5;
-
             display: flex;
-
             align-items: center;
-
             gap: 8px;
         }
-
+        
         .slider-dots span {
             width: 10px;
             height: 10px;
-
             display: block;
-
             border-radius: 50%;
-
             background: white;
-
             opacity: 0.7;
-
             cursor: pointer;
         }
-
+        
         .slider-dots span.active {
             width: 13px;
             height: 13px;
-
             background: #ffbe33;
-
             opacity: 1;
         }
-
         /* =========================
            RESPONSIVE
         ========================= */
-
+        
         @media (max-width: 992px) {
-
             .navbar-container {
                 max-width: calc(100% - 30px);
             }
-
             .nav-menu li {
                 margin-left: 18px;
             }
-
             .nav-icons {
                 margin-left: 18px;
             }
-
             .nav-icons a {
                 margin-left: 12px;
             }
-
             .order-online {
                 margin-left: 15px;
                 padding: 9px 18px;
             }
-
             .hero-title {
                 font-size: 60px;
             }
         }
-
+        
         @media (max-width: 768px) {
-
             .navbar-container {
                 flex-wrap: wrap;
             }
-
             .nav-menu {
                 order: 3;
-
                 width: 100%;
-
                 justify-content: center;
-
                 margin-top: 15px;
             }
-
             .nav-menu li {
                 margin: 0 10px;
             }
-
             .nav-icons {
                 margin-left: auto;
             }
-
             .order-online {
                 display: none;
             }
-
             .hero-content {
                 align-items: center;
             }
-
             .hero-text {
                 width: 70%;
             }
-
             .hero-title {
                 font-size: 55px;
             }
-
             .hero-description {
                 font-size: 14px;
             }
         }
-
+        
         @media (max-width: 576px) {
-
             .navbar-custom {
                 padding-top: 15px;
             }
-
             .logo {
                 font-size: 30px;
             }
-
             .nav-icons {
                 display: none;
             }
-
             .nav-menu {
                 justify-content: flex-start;
-
                 overflow-x: auto;
-
                 padding-bottom: 5px;
             }
-
             .nav-menu li {
                 margin: 0 12px 0 0;
             }
-
             .nav-menu a {
                 font-size: 12px;
             }
-
             .hero {
                 background-position: center;
             }
-
             .hero::before {
                 background: rgba(0, 0, 0, 0.5);
             }
-
             .hero-content {
                 padding-top: 80px;
             }
-
             .hero-text {
                 width: 100%;
             }
-
             .hero-title {
                 font-size: 52px;
             }
-
             .hero-description {
                 max-width: 100%;
             }
-
             .slider-dots {
                 left: 25px;
-
                 transform: none;
             }
         }
@@ -562,16 +447,11 @@
             <div class="hero-text">
 
                 <h1 class="hero-title">
-                    Fast Food<br>
-                    Restaurant
+                    Fast Food<br> Restaurant
                 </h1>
 
                 <p class="hero-description">
-                    Doloremque, itaque aperiam facilis rerum, commodi,
-                    temporibus sapiente ad mollitia laborum quam quisquam
-                    esse error unde. Tempora ex doloremque, labore, sunt
-                    repellat dolore, iste magni quos nihil ducimus libero
-                    ipsam.
+                    Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
                 </p>
 
                 <a href="menu.html" class="order-now">

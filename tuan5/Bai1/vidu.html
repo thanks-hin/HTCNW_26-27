@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="greeting"></h1>
+    <script src="../vd.js"></script>
+    <script>
+        document.getElementById("greeting").textContent = "Xin chào JavaScript!";
+        const ten = prompt("Nhập tên của bạn: ");
+        document.getElementById("greeting").textContent = "Xin chào " + ten + "!";
+    </script>
+</body>
+</html>
