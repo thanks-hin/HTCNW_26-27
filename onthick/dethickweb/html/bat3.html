@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sàn Giao Dịch Vàng</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #khung {
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white">
+    <div id="khung" style="width: 1000px; border: 2px solid rgb(192, 149, 6);" class="mt-3">
+        <!-- Navbar -->
+        <nav class="navbar navbar-dark bg-warning">
+            <div class="container">
+                <span class="navbar-brand text-dark fw-bold">Gold Trading</span>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="nav-link " href="#">Trang Chủ</a></li>
+                    <li class="nav-item"><a class="nav-link " href="#">Trợ Giúp</a></li>
+                    <li class="nav-item"><a class="nav-link " href="#">Liên Hệ</a></li>
+                </ul>
+                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#registerModal">
+            Đăng ký
+        </button>
+            </div>
+        </nav>
+        <div>
+            <img src="../img/banner2.jpg" alt="" class="w-100">
+
+        </div>
+        <!-- Table -->
+        <div class="container mt-2">
+            <h3 class="text-center mb-2">Danh Sách Đăng Ký</h3>
+
+            <div class="table-responsive">
+                <table class="table table-dark table-bordered text-center">
+                    <thead class="table-warning text-dark">
+                        <tr>
+                            <th>STT</th>
+                            <th>Họ tên</th>
+                            <th>Email</th>
+                            <th>Điện thoại</th>
+                            <th>Giới tính</th>
+                            <th>Năm Sinh</th>
+                            <th>Quốc Gia</th>
+                            <th>Mã số Quốc Gia</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="userTable">
+                        <tr>
+                            <td>1</td>
+                            <td>Nguyen Hoang Tuan</td>
+                            <td>nhtuan_2003@gmail.com</td>
+                            <td>093.4567899</td>
+                            <td>Nam</td>
+                            <td>11/20/2003</td>
+                            <td>Viet Nam</td>
+                            <td>704</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+
+            </div>
+            <div class="col-4" style="font-style: italic; font-weight: initial; ">
+                Mã Sinh Viên:-------------------- <br> Họ Tên Sinh Viên:-------------------- <br> Mã Lớp:--------------------
+            </div>
+            <div class="col-4">
+
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="registerModal">
+        <div class="modal-dialog">
+            <div class="modal-content text-dark">
+
+                <div class="modal-header ">
+                    <h5 class="modal-title">Form Đăng Ký</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="registerForm">
+
+                        <!-- Họ tên -->
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Họ tên</label>
+                            </div>
+                            <div class="col-8 mb-3">
+                                
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <span class="col-1 text-danger" id="er1">*</span>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Email</label>
+                            </div>
+                        
+                            <div class="col-8 mb-3">
+                            
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <span class="col-1 text-danger" id="er2">*</span>
+                        </div>
+                        <!-- Điện thoại -->
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Điện thoại</label>
+                            </div>
+                            <div class="col-8 mb-3">
+                            
+                            <input type="text" id="phone" class="form-control" required>
+                            </div>
+                            <span class="col-1 text-danger" id="er3">*</span>
+                        </div>
+                        <!-- Giới tính -->
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="d-block">Giới tính</label>
+                            </div>
+                        <div class="col-8 mb-3">
+                            
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="Nam" required>
+                                <label class="form-check-label">Nam</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="Nữ">
+                                <label class="form-check-label">Nữ</label>
+                            </div>
+                        </div>
+                        <span class="col-1 text-danger" id="er3">*</span>
+                        </div>
+                        <!--Do tuoi-->
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Năm Sinh:</label>
+                            </div>
+                            <div class="col-8 mb-3">
+                           
+                                <input type="date" id="ns" class="form-control" required>
+                                
+                            </div>   
+                            <span class="col-1 text-danger" id="er4">*</span> 
+                        </div>
+                        <!-- Quốc gia -->
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Quốc Gia</label>
+                            </div>
+                            <div class="col-8 mb-3">
+                           
+                                <select id="country" class="form-select">
+                                <option value="Việt Nam;704">Viet Nam</option>
+                                <option value="Mỹ;840">Mỹ</option>
+                                <option value="Nhật Bản;392">Nhat Ban</option>
+                                <option value="Hàn Quốc;410">Han Quoc</option>
+                                </select>
+                            </div>
+                        <span class="col-1 text-danger" id="er5">*</span> 
+                         </div>   
+                        <!-- Mã số Quốc Gia -->
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Mã số Quốc Gia</label>
+                            </div>
+                        <div class="col-8 mb-3">
+                            
+                            <input type="text" id="phone" class="form-control" placeholder="704">
+                        </div>
+                        <span class="col-1 text-danger" id="er6">*</span> 
+                        </div>
+
+                        <button type="submit" class="btn btn-warning w-100 fw-bold" data-bs-dismiss="modal">
+                        Lưu
+                    </button>
+                        <div class="row mt-2">
+                            <div class="col-12 text-end"><button type="button" data-bs-dismiss="modal" class="btn btn-dark">Close</button></div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let count = 1;
+
+        document.getElementById("registerForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let country = document.getElementById("country").value;
+
+            // Lấy giới tính
+            let gender = document.querySelector('input[name="gender"]:checked').value;
+
+            // Lấy ngôn ngữ (checkbox)
+            let languages = [];
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+                languages.push(cb.value);
+            });
+
+            let row = `
+        <tr>
+            <td>${count++}</td>
+            <td>${name}</td>
+            <td>${email}</td>
+            <td>${gender}</td>
+            <td>${country}</td>
+            <td>${languages.join(", ")}</td>
+            <td>${phone}</td>
+        </tr>
+    `;
+
+            document.getElementById("userTable").innerHTML += row;
+
+            // Reset form
+            document.getElementById("registerForm").reset();
+
+            // Đóng modal
+            let modal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+            modal.hide();
+        });
+    </script>
+
+</body>
+
+</html>
